@@ -22,7 +22,7 @@ import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-public class CommentsActivity extends FragmentActivity implements DetailPresenter{
+public class CommentsActivity extends FragmentActivity implements DetailPresenter {
 
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
@@ -38,16 +38,16 @@ public class CommentsActivity extends FragmentActivity implements DetailPresente
         initRecyclerView();
     }
 
-    private void initRecyclerView(){
+    private void initRecyclerView() {
         mForum = new ForumService();
         commentsAdapter = new CommentsAdapter();
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(commentsAdapter);
-        textViewBody = (TextView)findViewById(R.id.textViewBody);
-        textViewTitle = (TextView)findViewById(R.id.textViewTitle);
-        commentsPresenter = new CommentsPresenter(this,getIntent().getIntExtra("postId", 0));
+        textViewBody = (TextView) findViewById(R.id.textViewBody);
+        textViewTitle = (TextView) findViewById(R.id.textViewTitle);
+        commentsPresenter = new CommentsPresenter(this, getIntent().getIntExtra("postId", 0));
         commentsPresenter.loadPost();
         commentsPresenter.loadComments();
     }

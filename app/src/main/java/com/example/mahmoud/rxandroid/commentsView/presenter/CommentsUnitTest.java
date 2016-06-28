@@ -11,11 +11,11 @@ import java.util.List;
  */
 public class CommentsUnitTest implements RxCommentsPresenter {
 
-    List<Comment>comments;
+    List<Comment> comments;
     DetailPresenter detailPresenter;
     Post post;
-    public CommentsUnitTest(DetailPresenter detailPresenter)
-    {
+
+    public CommentsUnitTest(DetailPresenter detailPresenter) {
         this.detailPresenter = detailPresenter;
         comments = new ArrayList<>();
         comments.add(new Comment());
@@ -38,18 +38,16 @@ public class CommentsUnitTest implements RxCommentsPresenter {
     }
 
     @Override
-    public void loadPost()
-    {
-        if(detailPresenter != null)
+    public void loadPost() {
+        if (detailPresenter != null)
             detailPresenter.loadPost(post);
     }
 
     @Override
-    public void loadComments()
-    {
-        if(comments == null || comments.size() == 0)
+    public void loadComments() {
+        if (comments == null || comments.size() == 0)
             detailPresenter.onFail("");
-        else if(detailPresenter != null)
+        else if (detailPresenter != null)
             detailPresenter.loadComments(comments);
     }
 }

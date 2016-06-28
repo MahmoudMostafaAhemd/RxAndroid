@@ -13,11 +13,12 @@ import rx.schedulers.Schedulers;
 /**
  * Created by mahmoud on 6/28/16.
  */
-public class CommentsPresenter implements RxCommentsPresenter{
+public class CommentsPresenter implements RxCommentsPresenter {
 
     private final ForumService mForum;
     private final DetailPresenter detailPresenter;
     private int id;
+
     public CommentsPresenter(DetailPresenter detailPresenter, int id) {
         mForum = new ForumService();
         this.detailPresenter = detailPresenter;
@@ -37,13 +38,13 @@ public class CommentsPresenter implements RxCommentsPresenter{
 
                     @Override
                     public void onError(Throwable e) {
-                        if(detailPresenter != null)
+                        if (detailPresenter != null)
                             detailPresenter.onFail(e.toString());
                     }
 
                     @Override
                     public void onNext(Post post) {
-                        if(detailPresenter != null)
+                        if (detailPresenter != null)
                             detailPresenter.loadPost(post);
                     }
                 });
@@ -62,15 +63,15 @@ public class CommentsPresenter implements RxCommentsPresenter{
 
                     @Override
                     public void onError(Throwable e) {
-                        if(detailPresenter != null)
+                        if (detailPresenter != null)
                             detailPresenter.onFail(e.toString());
                     }
 
                     @Override
                     public void onNext(List<Comment> comments) {
-                        if(comments == null || comments.size() == 0)
+                        if (comments == null || comments.size() == 0)
                             detailPresenter.onFail("");
-                        else if(detailPresenter != null)
+                        else if (detailPresenter != null)
                             detailPresenter.loadComments(comments);
                     }
                 });

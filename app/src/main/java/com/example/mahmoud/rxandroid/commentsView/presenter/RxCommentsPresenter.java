@@ -5,5 +5,6 @@ package com.example.mahmoud.rxandroid.commentsView.presenter;
  */
 public interface RxCommentsPresenter {
     void loadPost();
+
     void loadComments();
 }

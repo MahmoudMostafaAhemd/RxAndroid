@@ -13,7 +13,7 @@ public interface DetailPresenter {
 
     void loadPost(Post posts);
 
-    void loadComments(List<Comment>comments);
+    void loadComments(List<Comment> comments);
 
     void onFail(String error);
 }

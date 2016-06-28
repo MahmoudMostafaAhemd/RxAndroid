@@ -54,7 +54,7 @@ public class ExampleUnitTest {
     }
 
     @Test
-    public void checkLoadComments(){
+    public void checkLoadComments() {
         DummyCommentsView dummyCommentsView = new DummyCommentsView();
         CommentsUnitTest commentsUnitTest = new CommentsUnitTest(dummyCommentsView);
         commentsUnitTest.loadComments();

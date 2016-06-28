@@ -15,13 +15,14 @@ import java.util.List;
 /**
  * Created by mahmoud on 6/28/16.
  */
-public class CommentsAdapter extends RecyclerView.Adapter<CommentsAdapter.CommentsViewHolder>{
+public class CommentsAdapter extends RecyclerView.Adapter<CommentsAdapter.CommentsViewHolder> {
 
-    List<Comment>commentsList;
+    List<Comment> commentsList;
 
-    public CommentsAdapter(){
+    public CommentsAdapter() {
         commentsList = new ArrayList<>();
     }
+
     @Override
     public CommentsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
@@ -44,15 +45,16 @@ public class CommentsAdapter extends RecyclerView.Adapter<CommentsAdapter.Commen
 
     public class CommentsViewHolder extends RecyclerView.ViewHolder {
         TextView textViewCommentName, textViewCommentEmail, textViewCommentBody;
+
         public CommentsViewHolder(View view) {
             super(view);
-            textViewCommentBody = (TextView)view.findViewById(R.id.textViewCommentBody);
-            textViewCommentEmail = (TextView)view.findViewById(R.id.textViewCommentEmail);
-            textViewCommentName = (TextView)view.findViewById(R.id.textViewCommentName);
+            textViewCommentBody = (TextView) view.findViewById(R.id.textViewCommentBody);
+            textViewCommentEmail = (TextView) view.findViewById(R.id.textViewCommentEmail);
+            textViewCommentName = (TextView) view.findViewById(R.id.textViewCommentName);
         }
     }
 
-    public void addItems(List<Comment>commentList){
+    public void addItems(List<Comment> commentList) {
         commentsList.addAll(commentList);
         notifyDataSetChanged();
     }
