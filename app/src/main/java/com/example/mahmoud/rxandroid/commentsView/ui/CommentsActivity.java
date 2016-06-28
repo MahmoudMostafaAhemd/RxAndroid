@@ -4,6 +4,7 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.example.mahmoud.rxandroid.R;
@@ -64,6 +65,6 @@ public class CommentsActivity extends FragmentActivity implements DetailPresente
 
     @Override
     public void onFail(String error) {
-
+        Log.d("onFailTag", error);
     }
 }

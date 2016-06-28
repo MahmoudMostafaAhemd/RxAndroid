@@ -4,6 +4,7 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import com.example.mahmoud.rxandroid.MainView.presenter.MainInterface;
 import com.example.mahmoud.rxandroid.R;
@@ -46,7 +47,7 @@ public class MainActivity extends FragmentActivity implements ListPresenter {
     }
 
     @Override
-    public void onFail(String messaeg) {
-        // on fail
+    public void onFail(String message) {
+        Log.d("onFailTag", message);
     }
 }
